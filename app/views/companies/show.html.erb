@@ -4,6 +4,16 @@
   <strong>Name:</strong>
   <%= @company.name %>
 </p>
+<%= form_for(@complain, remote:true) do |f| %>
+  
+  <div class="field">
+    <%= f.label :complain %><br>
+    <%= f.text_field :complain %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

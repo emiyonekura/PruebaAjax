@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  get 'companies/index'
+  
   resources :companies
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        registrations: 'users/registrations'
+      }
   # You can have the root of your site routed with "root"
   root 'companies#index'
 
